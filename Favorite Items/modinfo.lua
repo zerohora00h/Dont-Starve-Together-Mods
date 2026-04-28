@@ -1,19 +1,27 @@
 -- This information tells other players more about the mod
-name = "Favorite Items DEV"
+name = "Favorite Items"
 description = [[
-Favorite your items in inventory, always remain in the chosen slot
+[NOW CLIENT-SIDE!] - Works on any server.
+Favorite your items in inventory, always remain in the chosen slot.
 
-- Hold the item and press V in the slot you want it to always be.
-- Press V + Click again to quick remove item from favorite.
-- Hold item and press V in slot with other favorite to replace.
-- Press CTRL + SHIFT + Z to reset favorited items.
+- Hold Shift + Middle Click on an item to favorite it.
+- Doing it again will remove or move the favorite to the current slot.
+- Press CTRL + SHIFT + Z to reset all favorited items.
+- Crash protection added.
 
-- You can favorite multiple items.
-- Cant favorite in backpack.
+[AGORA CLIENT-SIDE!] - Funciona em qualquer servidor.
+Favorita seus itens no inventario para que sempre retornem ao slot escolhido.
+
+- Segure Shift + Clique do Meio em um item para favoritar.
+- Repetir o processo remove ou move o favorito para o slot atual.
+- Pressione CTRL + SHIFT + Z para resetar todos os itens favoritados.
+- Proteção contra crashes adicionada.
+
+Available in: English, Portuguese, Chinese, Russian, and Spanish.
 ]]
 
 author = "ZeroHora"
-version = "0.9.1"
+version = "1.2.1"
 
 icon_atlas = "modicon.xml"
 icon = "modicon.tex"
@@ -33,42 +41,28 @@ dst_compatible = true
 
 
 --This lets clients know if they need to get the mod from the Steam Workshop to join the game
-all_clients_require_mod = true
+all_clients_require_mod = false
 
 --This determines whether it causes a server to be marked as modded (and shows in the mod list)
-client_only_mod = false
+client_only_mod = true
 
 --These tags allow the server running this mod to be found with filters from the server listing screen
 server_filter_tags = {""}
 
-ScaleValues = {}
-for i=1, 15 do
-	ScaleValues[i] = {description = "" .. (i/10), data = (i/10)}
-end
-
-configuration_options =
+configuration_options = 
 {
     {
-        name = "FI_SWITCH_KEY",
-        label = "Button to favorite items",
-        hover = "The key to favorite item in slot.",
-        options = {
-            {description = "R", data = "R"},
-            {description = "T", data = "T"},
-            {description = "O", data = "O"},
-            {description = "P", data = "P"},
-            {description = "G", data = "G"},
-            {description = "H", data = "H"},
-            {description = "J", data = "J"},
-            {description = "K", data = "K"},
-            {description = "L", data = "L"},
-            {description = "Z", data = "Z"},
-            {description = "X", data = "X"},
-            {description = "C", data = "C"},
-            {description = "V", data = "V"},
-            {description = "B", data = "B"},
-            {description = "N", data = "N"},
+        name = "LANGUAGE",
+        label = "Language / Idioma",
+        hover = "Choose the mod language / Escolha o idioma do mod.",
+        options =
+        {
+            {description = "English", data = "en"},
+            {description = "Português", data = "pt"},
+            {description = "Chinese", data = "zh"},
+            {description = "Russian", data = "ru"},
+            {description = "Spanish", data = "es"},
         },
-        default = "V",
-    }
+        default = "en",
+    },
 }

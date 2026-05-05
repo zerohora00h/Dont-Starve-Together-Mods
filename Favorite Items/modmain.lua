@@ -320,8 +320,10 @@ local function runTask()
 end
 
 AddPlayerPostInit(function(inst)
-	inst:DoTaskInTime(0, function(inst)
+	inst:ListenForEvent("playeractivated", function(inst)
 		if inst ~= GLOBAL.ThePlayer then return end
+
+		task_running = false
 
 		inst:ListenForEvent("itemget", runTask)
 		inst:ListenForEvent("itemlose", runTask)
@@ -347,6 +349,7 @@ AddPlayerPostInit(function(inst)
 								end
 							end
 						end
+						runTask()
 					end
 				end
 			end)

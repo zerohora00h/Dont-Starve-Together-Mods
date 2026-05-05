@@ -21,7 +21,7 @@ Available in: English, Portuguese, Chinese, Russian, and Spanish.
 ]]
 
 author = "ZeroHora"
-version = "1.2.1"
+version = "1.2.3"
 
 icon_atlas = "modicon.xml"
 icon = "modicon.tex"
